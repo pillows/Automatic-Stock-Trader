@@ -1,9 +1,9 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging..
 
-FROM mcr.microsoft.com/dotnet/runtime:8.0.17-bookworm-slim-amd64 AS base
+FROM mcr.microsoft.com/dotnet/runtime:7.0-jammy AS base
 WORKDIR /app
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0.411-bookworm-slim-amd64 AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0-jammy AS build
 WORKDIR /src
 COPY ["AutomaticStockTrader/AutomaticStockTrader.csproj", "AutomaticStockTrader/"]
 COPY ["AutomaticStockTrader.Repository/AutomaticStockTrader.Repository.csproj", "AutomaticStockTrader.Repository/"]
